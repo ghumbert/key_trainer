@@ -1,0 +1,262 @@
+/* Eric Meyer reset.css v2.0 20110126 --- & --- normalize.css v2.0.1 git.io/normalize */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, sub, sup, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+ol, ul {
+  list-style: none; }
+
+article, aside, details, figcaption, figure, footer, header, main, nav, section, summary {
+  display: block; }
+
+audio, canvas, video {
+  display: inline-block; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%; }
+
+body {
+  line-height: 1; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+em {
+  font-style: italic; }
+
+strong {
+  font-weight: bold; }
+
+small {
+  font-size: 80%; }
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  text-transform: lowercase; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+input, button, select {
+  vertical-align: middle; }
+
+input, button, textarea, select {
+  font: inherit; }
+
+button, input {
+  line-height: normal; }
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled], input[disabled] {
+  cursor: default; }
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical; }
+
+img {
+  border: 0 none;
+  display: block; }
+
+blockquote, q {
+  quotes: "\ab\00a0" "\00a0\bb" "\2039\00a0" "\00a0\203a"; }
+
+/*:lang(fr)*/
+blockquote::before, q::before {
+  content: open-quote; }
+
+blockquote::after, q::after {
+  content: close-quote; }
+
+:focus {
+  outline: 0 none; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* http://paulirish.com/2012/box-sizing-border-box-ftw/ */
+/* @group UTILS */
+html, body {
+  height: 100%; }
+
+html, body, button, input, select, textarea {
+  color: #222; }
+
+body {
+  font: 0.9375em/1.2em Helvetica, sans-serif;
+  /* assuming 15px */ }
+
+a {
+  color: #222;
+  cursor: pointer; }
+
+a:active {
+  position: relative;
+  top: 1px; }
+
+a:active, a:hover {
+  outline: 0; }
+
+[hidden] {
+  display: none; }
+
+.hidden {
+  display: none !important;
+  visibility: hidden; }
+
+.clearfix::before, .clearfix::after {
+  content: "\0020";
+  display: block;
+  line-height: 0;
+  height: 0;
+  width: 0;
+  visibility: hidden; }
+
+.clearfix::after {
+  clear: both; }
+
+
+/* @end UTILS */
+/* @group STRUCTURE */
+/* WIDTH WRAP */
+.width-wrap {
+  width: 100%;
+  max-width: 1550px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 3%;
+  padding-right: 3%; }
+
+@media (min-width: 1550px) {
+  .width-wrap {
+    padding: 0 46px; }
+  /* max-width * 2% */ }
+
+/* HEADER */
+/* MAIN */
+
+#container {
+  margin: 0 auto;
+  width: 100%;
+  font-size: 0;
+}
+
+#analyserCanvas {
+  background: rgba(200,200,200,0.2);
+  position: absolute;
+  right: 0;
+}
+
+#spectogramCanvas {
+  background: #ddd;
+  background: #000;
+}
+
+#keyFreqs {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+  #keyFreqs div {
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    background-color: #fff;
+    opacity: 0.3;
+  }
+
+
+#pianoKeys {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+  #pianoKeys div {
+    width: 100%;
+    position: relative;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    opacity: 0.4;
+    font-size: 16px;
+    color: red;
+    padding-left: 10px;
+    background-color: white;
+    line-height: 0;
+  }
+
+  #pianoKeys div:first-child {
+    margin-top: 10.215599618px;
+  }
+
+  .key {
+    position: absolute;
+    width: 100%;
+    font-size: 40px;
+    color: #000;
+    top: 50px;
+    text-align: center;
+  }
+
+.staff {
+  width: 100px;
+  height: 100px;
+  background-color: #abc;
+}
+
+/*  #pianoKeys div:nth-child(88) {
+    border-top: 5px;
+  }*/
+
+/*  #pianoKeys div:nth-child(12n),
+  #pianoKeys div:nth-child(12n+2),
+  #pianoKeys div:nth-child(12n+5),
+  #pianoKeys div:nth-child(12n+7),
+  #pianoKeys div:nth-child(12n-2){
+    background-color: black;
+  }*/
