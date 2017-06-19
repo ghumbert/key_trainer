@@ -107,15 +107,41 @@ generateRandomKey = function (max, min) {
 
 placeKey = function (keyIndex) {
 
-	var $musicScore = $(".staff"),
-		height = $musicScore.height(),
+	var musicScore = Snap(".staff"),
+		height = 300,
 		middle = height / 2,
 		keyHeight = 10,
 		gradationHeight = height / totalKey,
-		position = keyIndex - 47,
+		position = keyIndex - 46,
 		keyPosition = middle + position * gradationHeight;
 
-	console.log(position, keyPosition);
+		
+	musicScore.circle(150, keyPosition, 6);
+
+
+	console.log(position, gradationHeight);
 
 
 };
+
+/*
+
+la
+	la#
+si0
+do0
+	do#
+ré0
+	ré#
+mi0
+fa0
+	fa#
+sol0
+	sol#
+
+88 - Math.floor((88-1)/12) - Math.floor((88-4)/12) - Math.floor((88-6)/12) - Math.floor((88-9)/12) -Math.floor((8-11)/12)
+= 63
+
+attendu 52 bug de camcul
+
+*/

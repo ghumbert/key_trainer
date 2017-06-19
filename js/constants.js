@@ -1,4 +1,3 @@
-
 var KEYS = [
   {pos: 1, hz: 27.5, name: '1', enName: 'A0'},
   {pos: 2, hz: 29.1352, name: '1 1', enName: 'A#0 ou Bb0'},
