@@ -6,9 +6,12 @@
 var	frequencyDomain = RangeToGet4186Max,
 	maxAmplitudeValue = 0,
 	maxIndex = 55,
-	minIndex = 21,
+	minIndex = 40,
 	keyRange = maxIndex - minIndex,
 	totalKey = KEYS.length,
+	totalDiatonic = totalKey - Math.ceil((totalKey-1)/12) - Math.ceil((totalKey-4)/12) - Math.ceil((totalKey-6)/12) - Math.ceil((totalKey-9)/12) -Math.ceil((totalKey-11)/12),
+	height = 300,
+	gradationHeight = height / totalDiatonic,
 
 
 	detectKey = function() {
@@ -98,8 +101,8 @@ getClosestKey = function(freq) {
 generateRandomKey = function (max, min) {
 	var randomKey = Math.floor(Math.random()*(max-min+1) + min);
 
-	$(".europe").html(KEYS[randomKey].name);
-	$(".english").html(KEYS[randomKey].enName);
+	$(".europe").html(KEYS[randomKey - 1].name);
+	$(".english").html(KEYS[randomKey - 1].enName);
 	placeKey(randomKey);
 
 	return randomKey;
@@ -107,41 +110,31 @@ generateRandomKey = function (max, min) {
 
 placeKey = function (keyIndex) {
 
-	var musicScore = Snap(".staff"),
-		height = 300,
-		middle = height / 2,
-		keyHeight = 10,
-		gradationHeight = height / totalKey,
-		position = keyIndex - 46,
-		keyPosition = middle + position * gradationHeight;
 
-		
+	var musicScore = Snap(".staff"),
+		diatonicDistance = keyIndex - Math.ceil((keyIndex-1)/12) - Math.ceil((keyIndex-4)/12) - Math.ceil((keyIndex-6)/12) - Math.ceil((keyIndex-9)/12) - Math.ceil((keyIndex-11)/12),
+
+		keyPosition = diatonicDistance * gradationHeight;
+
+	$("circle, text").remove();
+	if(KEYS[keyIndex].name.includes("#")){
+		console.log("diese");
+		musicScore.text(160,keyPosition+16,"#");
+	}
+
 	musicScore.circle(150, keyPosition, 6);
 
+	console.log(keyIndex, diatonicDistance, keyPosition);
 
-	console.log(position, gradationHeight);
+
+
 
 
 };
 
 /*
 
-la
-	la#
-si0
-do0
-	do#
-ré0
-	ré#
-mi0
-fa0
-	fa#
-sol0
-	sol#
+comment calculer keyPosition
 
-88 - Math.floor((88-1)/12) - Math.floor((88-4)/12) - Math.floor((88-6)/12) - Math.floor((88-9)/12) -Math.floor((8-11)/12)
-= 63
-
-attendu 52 bug de camcul
 
 */
